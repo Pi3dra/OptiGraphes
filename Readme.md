@@ -11,7 +11,7 @@ Ce repo explore l’échange de devises via une **modélisation de graphe orient
 - **Idée** : **générer tous** les chemins de longueur `p` qui **commencent et finissent par EUR** (option : interdire `x_i = x_{i-1}`), puis **sélectionner le max**.
 - **Forces** : donne le **vrai optimum** (dans l’espace exploré).
 - **Limites** : explosion combinatoire quand `p` ou le degré moyen augmentent.
-- **Complexité** : exponentielle `≈ O(d^p)` ; utiliser des générateurs (yield) pour éviter de tout stocker.
+- **Complexité** : exponentielle `≈ O(3^p)` ; utiliser des générateurs (yield) pour éviter de tout stocker.
 
 ### Algo 3 — Programmation dynamique
 - **Idée** : **Similiare a l'algo 2** on etudie les different chemins possibles mais au lieu de calculer des produit on maximise une **somme de logs**.
@@ -19,3 +19,4 @@ Ce repo explore l’échange de devises via une **modélisation de graphe orient
 - **Complexité** : `O(p · |U|)`.
 
 ---
+
