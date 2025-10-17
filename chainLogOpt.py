@@ -21,6 +21,9 @@ def best_path_max_product(p: int) -> Tuple[List[int], float]:
     if p < 2:
         # Longueurs < 2 n'ont pas de sens ici
         return [], 0.0
+    
+    p = p+1  # correction : p c'est la quantité d'échanges et pas de noeuds
+
     L = p - 1  # nombre d'échanges
 
     # On travaille en log pour la stabilité numérique:
@@ -76,7 +79,7 @@ if __name__ == "__main__":
     for p in [3, 4, 5, 10, 16, 24, 128]:
         path, gain = best_path_max_product(p)
         if path:
-            labels = [CODES[x] for x in path]
+            # labels = [CODES[x] for x in path]
             print(f"p={p}  gain max = {gain:.6f}")
-            print("chemin:", path, " / ", " -> ".join(labels))
+            # print("chemin:", path, " / ", " -> ".join(labels))
             print("-"*50)
