@@ -1,5 +1,5 @@
 # Sujet Finance 
-
+Groupe de: Vladimir Herrera Nativi, Bartolomei Pedro, Raphael Leonardi
 Ce repo explore l’échange de devises via une **modélisation de graphe orienté** :
 ---
 ## Aperçu des 3 algorithmes
@@ -19,4 +19,5 @@ Ce repo explore l’échange de devises via une **modélisation de graphe orient
 - **Complexité** : `O(p · |U|)`.
 
 ---
+
 
