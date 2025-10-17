@@ -16,7 +16,6 @@ def path_money(path):
         collector *= i
     return collector
 
-
 ALPHABET = ("0", "1", "2", "3")
 
 def generate_chains(p):
@@ -28,12 +27,8 @@ def generate_chains(p):
     """
     if p < 2:
         return
-    if p == 2:
-        return
-    if p == 3:
-        for mid in ("1", "2", "3"):
-            yield "0" + mid + "0"
-        return
+    
+    p += 1 # correction p est le nombre de transaction et non pas le nombre de noeuds 
 
     # Positions 2..p-1 (p-2 positions internes)
     # On impose les contraintes localement pour éviter l'explosion combinatoire.
@@ -72,7 +67,7 @@ def string_to_int_list(liste):
     return path
 
 if __name__ == "__main__":
-    for p in range(3, 14):
+    for p in range(3, 17):
         print(f"TAILLE {p}")
         chains = list_chains(p)
         print(f"TOTAL {len(chains)}")
