@@ -4,12 +4,6 @@ matrix =[ [1   , 1.19, 1.33, 1.62], # EUR
           [0.75, 0.89,    1, 1.22], # JP
           [0.62, 0.73, 0.82, 1   ]] # CHF
 
-def index_to_string(index : int):
-    match index:
-        case 0: "EUR"
-        case 1: "USD"
-        case 2: "JP"
-        case 3: "CHF"
 
 def get_biggest_link(index: int):
     max = 0
@@ -45,14 +39,6 @@ def find_biggest_path( limit : int):
     path.append(0)
     return path
 
-# Path enumeration
-
-#for i in range(10):
-#    path = find_biggest_path(i*5)
-#    edges =  links_of_path(path)
-#    print(path_money(edges))
-               
-
 
 ALPHABET = ("0", "1", "2", "3")
 
@@ -63,7 +49,7 @@ def string_to_int_list(liste):
     return path
 
 def int_path_to_string(path):
-    devises = ["€", "$", "JP", "CHF"]
+    devises = ["EUR", "USD", "JP", "CHF"]
     chaine = [devises[i] for i in path]
     return "->".join(chaine)
 
@@ -73,5 +59,5 @@ if __name__ == "__main__":
         chaine = int_path_to_string(path)
         exch_values = links_of_path(path)
         gain = path_money(exch_values)
-        print(f"chemin: {chaine} | gain: {gain:.6f}")
+        print(f"taille: {p} \ngain: {gain:.6f} \nchemin: {chaine} ")
         print("-" * 50)

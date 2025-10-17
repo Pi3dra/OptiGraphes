@@ -79,7 +79,8 @@ if __name__ == "__main__":
     for p in [3, 4, 5, 10, 16, 24, 128]:
         path, gain = best_path_max_product(p)
         if path:
-            # labels = [CODES[x] for x in path]
-            print(f"p={p}  gain max = {gain:.6f}")
-            # print("chemin:", path, " / ", " -> ".join(labels))
+            print(f"taille: {p}\ngain: {gain:.6f}")
+            if p <= 16:
+                labels = [CODES[x] for x in path]
+                print("chemin:","->".join(labels))
             print("-"*50)

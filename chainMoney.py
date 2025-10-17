@@ -15,6 +15,17 @@ def path_money(path):
     for i in path:
         collector *= i
     return collector
+        
+def path_to_string(nums):
+    mapping = {0: "EUR", 1: "USD", 2: "JP", 3: "CHF"}
+    
+    try:
+        names = [mapping[n] for n in nums]
+    except KeyError as e:
+        raise ValueError(f"Invalid currency code: {e.args[0]} (must be 0–3)") from None
+    
+    return "->".join(names)
+
 
 ALPHABET = ("0", "1", "2", "3")
 
@@ -67,10 +78,8 @@ def string_to_int_list(liste):
     return path
 
 if __name__ == "__main__":
-    for p in range(3, 17):
-        print(f"TAILLE {p}")
+    for p in range(3, 15):
         chains = list_chains(p)
-        print(f"TOTAL {len(chains)}")
 
         max_value = 0
 
@@ -83,5 +92,9 @@ if __name__ == "__main__":
             if value > max_value:
                 max_value = value
                 biggest = (corrected,value)
-        print("BEST: ", biggest , "\n")
+        
+        print("-"*50)
+        print(f"taille: {p}")
+        print(f"gain: {biggest[1]}")
+        print(f"chemin: {path_to_string(biggest[0])}")
         
